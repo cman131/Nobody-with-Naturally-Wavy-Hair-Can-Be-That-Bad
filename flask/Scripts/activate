@@ -39,7 +39,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="$(if [ "$OSTYPE" "==" "cygwin" ]; then cygpath -u 'c:\Users\Conor\workbench\PersonalProjects\MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld\flask'; else echo '/c/Users/Conor/workbench/PersonalProjects/MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld/flask'; fi;)"
+VIRTUAL_ENV="$(if [ "$OSTYPE" "==" "cygwin" ]; then cygpath -u 'c:\Users\conor\workbench\MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld\flask'; else echo '/c/Users/conor/workbench/MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld/flask'; fi;)"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
