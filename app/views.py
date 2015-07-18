@@ -6,3 +6,8 @@ from flask import render_template
 def index():
 	user = {'name': 'Conor'}
 	return render_template('index.html', title='Home', user=user)
+
+@app.route('results')
+def results():
+	user = {'name': 'Conor'}
+	return render_template('results.html', title='Home', user=user)
