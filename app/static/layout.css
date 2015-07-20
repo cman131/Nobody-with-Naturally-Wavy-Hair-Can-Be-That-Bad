@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+
+header {
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100px;
+    position: absolute;
+    background-color: rgb(113, 168, 145);
+}
+#logo {
+    float: left;
+    display: inline-block;
+}
+#search {
+    float: right;
+    display: inline-block;
+    margin: 21px;
+}
+#search-input {
+    display: inline-block;
+    border-radius: 50px;
+    width: 100px;
+}
+#search-button {
+    display: inline-block;
+    border-radius: 50px;
+}
+
+#main-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 100px;
+}

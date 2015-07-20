@@ -1,12 +1,4 @@
-<html>
-    <head>
-        {% if title %}
-        <title>{{title}}</title>
-        {% else %}
-        <title>Welcome to our park</title>
-        {% endif %}
-    </head>
-    <body>
-        <h1>{{user.name}} - Thank you for coming</h1>
-    </body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>{{user.name}} - Thank you for coming</h1>
+{% endblock %}

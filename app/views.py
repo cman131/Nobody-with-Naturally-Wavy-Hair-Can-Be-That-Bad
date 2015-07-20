@@ -7,7 +7,8 @@ def index():
 	user = {'name': 'Conor'}
 	return render_template('index.html', title='Home', user=user)
 
-@app.route('results')
+@app.route('/results')
 def results():
 	user = {'name': 'Conor'}
-	return render_template('results.html', title='Home', user=user)
+	results = [{'name':'Result 1'}, {'name':'Result 2'}, {'name':'Result 3'}]
+	return render_template('results.html', title='Home', user=user, results=results)
