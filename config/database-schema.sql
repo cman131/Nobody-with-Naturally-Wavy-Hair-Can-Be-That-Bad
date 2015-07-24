@@ -1,0 +1,23 @@
+CREATE TABLE `park` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `state` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `zip_code` varchar(45) DEFAULT NULL,
+  `latitude` decimal(9,6) DEFAULT NULL,
+  `longitude` decimal(9,6) DEFAULT NULL,
+  `size` varchar(45) DEFAULT NULL,
+  `playgrounds` tinyint(120) unsigned DEFAULT NULL,
+  `water_playground` tinyint(120) unsigned DEFAULT NULL,
+  `open_space` tinyint(120) unsigned DEFAULT NULL,
+  `tennis_court` tinyint(120) unsigned DEFAULT NULL,
+  `basketball_court` tinyint(120) unsigned DEFAULT NULL,
+  `baseball_field` tinyint(120) unsigned DEFAULT NULL,
+  `soccer_field` tinyint(120) unsigned DEFAULT NULL,
+  `football_field` tinyint(120) unsigned DEFAULT NULL,
+  `skate_park` bit(1) DEFAULT NULL,
+  `boating` bit(1) DEFAULT NULL,
+  `hiking` bit(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
