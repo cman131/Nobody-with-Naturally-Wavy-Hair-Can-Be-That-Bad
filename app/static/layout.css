@@ -2,6 +2,11 @@ body {
     margin: 0;
     padding: 0;
 }
+
+:focus {
+    outline: none;
+}
+
 ul {
     list-style: none;
 }
@@ -17,18 +22,28 @@ header {
 #logo {
     float: left;
     display: inline-block;
+    margin: 21px;
+    margin-top: 30px;
 }
 #search {
     float: right;
+    position: relative;
     display: inline-block;
     margin: 21px;
+    margin-top: 40px;
+    margin-right: 50px;
+    width: 270px;
 }
-#search-input {
+#search-field {
     display: inline-block;
     border-radius: 50px;
-    width: 100px;
+    width: 250px;
+    padding-left: 8px;
+    padding-right: 54px;
 }
 #search-button {
+    position: absolute;
+    left: 200px;
     display: inline-block;
     border-radius: 50px;
 }
@@ -39,4 +54,5 @@ header {
     right: 0;
     bottom: 0;
     top: 100px;
+    overflow-y: auto;
 }
