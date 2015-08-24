@@ -1,6 +1,6 @@
-from app import app, models
-from flask import render_template, request
-import math
+from app import app, models, config
+from flask import render_template, request, jsonify
+import math, urllib.request, json
 
 @app.route('/')
 @app.route('/index')
@@ -10,15 +10,49 @@ def index():
 
 @app.route('/results')
 def results():
-    distance = request.args.get('dist') if request.args.get('dist') != None else 10
+    distance = request.args.get('dist')
     coordinates = (
         request.args.get('lat') if request.args.get('lat') != None else 70.909333,
         request.args.get('long') if request.args.get('long') != None else 34.768463)
     user = {'name': 'Conor'}
-    models.Park.query.all()
-    results = filterToLocation(results, coordinates, distance)
-    return render_template('results.html', title='Home', user=user, results=results)
 
+    results = models.Park.all()
+    if(distance!=None):
+        results = filterToLocation(results, coordinates, distance)
+    return render_template('results.html', title='Results', user=user, results=results)
+
+@app.route('/park')
+def park():
+    if(request.args.get('id')==None):
+        return jsonify({'status': 500})
+    user = {'name': 'Conor'}
+    park = models.Park.get(request.args.get('id'))
+    return render_template('park.html', title=park.name, user=user, parky=park.__dict__())
+
+
+@app.route('/park/create')
+def create():
+    if(request.args.get('name')==None):
+        return 'A 500 error occurred.'
+
+    # Retrieve lat and long from google
+    locationData = urllib.request.urlopen(config.GEOCODE_API_BASE_URL +
+        '?address='+request.args.get('address').replace(' ', '+') + ',' +
+        request.args.get('city').replace(' ', '+') + ',' +
+        request.args.get('state') + '&key=' + config.GEOCODE_API_KEY).read()
+    locationData = json.loads(locationData.decode('utf-8'))['results'][0]['geometry']['location']
+
+    # Make a temporary object with the given data and save it to the db
+    temp = models.Park(None, request.args.get('name'),
+                    request.args.get('size'),
+                    request.args.get('address'),
+                    request.args.get('zip_code'),
+                    request.args.get('state'),
+                    request.args.get('city'),
+                    int(request.args.get('playground')),
+                    float(locationData['lat']),
+                    float(locationData['lng']))
+    return jsonify({'status': 200 if temp.save() else 500})
 
 # Non routes
 

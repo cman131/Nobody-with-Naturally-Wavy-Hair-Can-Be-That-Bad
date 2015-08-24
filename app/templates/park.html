@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+        <ul id='Park'>
+            {% for key in parky %}
+                {% if key!='id' %}
+                    <li><label>{{key}}: </label>{{parky[key]}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+{% endblock %}
