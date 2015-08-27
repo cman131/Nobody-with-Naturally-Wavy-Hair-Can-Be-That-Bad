@@ -45,3 +45,13 @@ MYSQL_DATABASE_HOST = "localhost"
 
  9. Now run the dbSetup.py with ```python dbSetup.py```
  10. If all went well you should now be able to run ```python run.py``` to start the server on <a href='http://localhost:5000'>localhost:5000</a>
+
+
+<h1>Recommended Git Setup</h1>
+1. Fork this project on github
+2. Make sure you have <a href='https://git-scm.com/book/en/v2/Getting-Started-Installing-Git'>git installed</a>.
+3. Now go ahead and open a terminal or git bash if on windows.
+4. Navigate to the directory you want this project to be in.
+5. Now execute ```git clone https://github.com/{GitUsername}/MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld.git```
+  5.1 replace {GitUsername} with your git username
+6. The remaining command is to set the remote ```git add remote upstream https://github.com/cman131/MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld.git```
