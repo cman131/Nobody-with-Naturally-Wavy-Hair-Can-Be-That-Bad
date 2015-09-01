@@ -23,7 +23,8 @@ python -m pip install flipflop
 python -m pip install coverage
  ```
  4. You also need to install and <a href'http://dev.mysql.com/downloads/windows/installer/'>set up mysql</a>
- 5. Now you need to go <a href='https://developers.google.com/maps/documentation/geocoding/intro'>get yourself a key</a> for google's geocoding api
+ 5. Now you need to go <a href='https://developers.google.com/maps/documentation/geocoding/intro'>get yourself keys</a> for google's geocoding api and map component api
+   5.1. Get a Server Key and a Browser Key (You should also specify referrers)
  6. Navigate to where you have cloned this project
    6.1. If you have not yet, follow the recommended git setup section or just do it how you want.
  7. Now make a copy of the config_example.py file named 'config.py'
@@ -32,7 +33,8 @@ python -m pip install coverage
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-GEOCODE_API_KEY = "dis here's a key"
+GOOGLE_SERVER_API_KEY = "dis here's a server key"
+GOOGLE_BROWSER_API_KEY = "dis is a browser key"
 GEOCODE_API_BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
 
 MYSQL_DATABASE_USER = "iamtotallyavalidusername"

@@ -39,7 +39,7 @@ def create():
     locationData = urllib.request.urlopen(config.GEOCODE_API_BASE_URL +
         '?address='+request.args.get('address').replace(' ', '+') + ',' +
         request.args.get('city').replace(' ', '+') + ',' +
-        request.args.get('state') + '&key=' + config.GEOCODE_API_KEY).read()
+        request.args.get('state') + '&key=' + config.GOOGLE_SERVER_API_KEY).read()
     locationData = json.loads(locationData.decode('utf-8'))['results'][0]['geometry']['location']
 
     # Make a temporary object with the given data and save it to the db

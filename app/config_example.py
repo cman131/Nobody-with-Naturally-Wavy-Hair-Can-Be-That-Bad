@@ -1,7 +1,8 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-GEOCODE_API_KEY = ""
+GOOGLE_SERVER_API_KEY = ""
+GOOGLE_BROWSER_API_KEY = ""
 GEOCODE_API_BASE_URL = ""
 
 MYSQL_DATABASE_USER = ""
