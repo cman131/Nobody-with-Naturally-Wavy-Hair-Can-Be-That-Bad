@@ -1,0 +1,33 @@
+#park-attributes {
+    position: absolute;
+    left: 0;
+    right: 40%
+}
+.park-attribute label {
+    border-right: inset 1px black;
+    margin: 10px;
+    margin-left: 0px;
+}
+.park-attribute {
+    margin: 10px;
+    margin-left: 0;
+}
+#map-data {
+    position: absolute;
+    right: 0;
+    left: 60%;
+    height: 80%;
+}
+#coordinates {
+    width: 98%;
+    height: 6%;
+    border: inset 1px black;
+    display: inline-block;
+    text-align: center;
+}
+#map {
+    width: 250px;
+    height: 250px;
+    border: inset 1px black;
+    border-top: none;
+}

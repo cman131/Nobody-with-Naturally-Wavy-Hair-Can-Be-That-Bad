@@ -27,7 +27,7 @@ def park():
         return jsonify({'status': 500})
     user = {'name': 'Conor'}
     park = models.Park.get(request.args.get('id'))
-    return render_template('park.html', title=park.name, user=user, parky=park.__dict__())
+    return render_template('park.html', title=park.name, user=user, config=config, parky=park.__dict__())
 
 
 @app.route('/park/create')
