@@ -1,5 +1,5 @@
 # MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld
-A Python Flask web application to rate Parks in your area
+A Python Flask web application to rate Parks in your area that may end up as a prototype to build a base rating application that can be used to build an application for rating anything from parks to perspective.
 
 <h1>Project Mission</h1>
 <ul>
