@@ -1,6 +1,21 @@
 # MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld
 A Python Flask web application to rate Parks in your area
 
+<h1>Project Mission</h1>
+<ul>
+<li>I intend to use this project for getting familiar with the flask framework and the construction of Flask applications.
+ <ul></li>This project will likely begin in a very messy setup without testing while I am exploring the structure and tools that flask provides.
+ </li></ul>
+</li>
+<li>I will also be integrating my ShellCommand for Python libraries in order to perform unix level tasks that... I have not come up with yet :D</li>
+<li>Another goal I intend to take on is making a welcoming project for open source contributors.
+ <ul><li>This will not be the project I start out trying to build a community for, but I will attempt to have the documentation and README be as welcoming as I can make it.</li>
+ <li>I'll start out by making setup instructions for Windows and then follow up with Linux(probably Ubuntu). I'll have some friends run through the setup and give me some feedback about the process, instructions, and README organization.
+ </li>
+ <li>I will attempt to create a setup for OSX as well, but I need to get my hands on a mac first :) [Probably going to borrow Brian's]
+ </li></ul>
+</li>
+</ul>
 
 <h1>How to set up and run</h1>
 <h3>Windows</h3>
