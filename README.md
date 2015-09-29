@@ -1,4 +1,5 @@
 # MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld
+<h3><b style='color: red;'>STALLED</b></h3><p> - until I get time off from or am finished with Senior Project</p>
 A Python Flask web application to rate Parks in your area that may end up as a prototype to build a base rating application that can be used to build an application for rating anything from parks to perspective.
 
 <h1>Project Mission</h1>
