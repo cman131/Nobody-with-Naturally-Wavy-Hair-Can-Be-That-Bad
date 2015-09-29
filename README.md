@@ -38,7 +38,7 @@ python -m pip install guess_language
 python -m pip install flipflop
 python -m pip install coverage
  ```
- 4. You also need to install and <a href'http://dev.mysql.com/downloads/windows/installer/'>set up mysql</a>
+ 4. You also need to install and <a href='http://dev.mysql.com/downloads/windows/installer/'>set up mysql</a>
  5. Now you need to go <a href='https://developers.google.com/maps/documentation/geocoding/intro'>get yourself keys</a> for google's geocoding api and map component api
    5.1. Get a Server Key and a Browser Key (You should also specify referrers)
  6. Navigate to where you have cloned this project
