@@ -59,3 +59,6 @@ target/
 # Secrets
 app/secret/
 config.py
+
+sky-version/node_modules
+sky-version/package-lock.json
