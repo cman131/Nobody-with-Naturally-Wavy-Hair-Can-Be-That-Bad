@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="../static/css/collectionmanager.css" charset="utf-8">
+<div id="collection-manager-view" ng-controller='CollectionController'>
+  <div id="collection-view" class="well">
+    <div class="row collection-card" ng-repeat='cardrow in cards | chunk'>
+      <div class="col-xs-4 col-sm-2 col-md-1" ng-repeat='card in cardrow'>
+        <div class="thumbnail" card-popover="card">
+          <img class="img-responsive" ng-src="{{card.image}}" alt="Image not available">
+        </div>
+      </div>
+    </div>s
+  </div>
+</div>

@@ -1,0 +1,160 @@
+<div
+  class="builder-preview-pane">
+  <img
+    class="builder-preview-pane-image"
+    [attr.src]="selectedCard.imageUrl"
+  />
+  <p
+    class="builder-preview-pane-description">
+    {{ selectedCard.description }}
+  </p>
+  <hr />
+  <div
+    class="builder-preview-pane-menu">
+    <div
+      class="builder-preview-deck-name sky-form-group">
+      <label
+        class="sky-control-label"
+        for="deck-name">
+        Deck name:
+      </label>
+      <input
+        class="sky-form-control"
+        id="deck-name"
+        type="text"
+        [(ngModel)]="deck.name"
+      />
+    </div>
+    <div
+      class="builder-preview-deck-author sky-form-group">
+      <label
+        class="sky-control-label"
+        for="deck-author">
+        Author:
+      </label>
+      <input
+        class="sky-form-control"
+        id="deck-author"
+        type="text"
+        [(ngModel)]="deck.author"
+      />
+    </div>
+    <div
+      class="builder-preview-save sky-form-group">
+      <button
+        class="sky-btn sky-btn-primary sky-form-control"
+        type="button"
+        (click)="save()"
+      >
+        Save
+      </button>
+    </div>
+    <div
+      class="builder-preview-save-as sky-form-group">
+      <button
+        class="sky-btn sky-btn-default sky-form-control"
+        type="button"
+        (click)="save(true)"
+      >
+        Save As New
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="builder-deck-pane">
+  <div
+    class="builder-deck-pane-main"
+    (dragover)="$event.preventDefault()"
+    (drop)="drop($event)">
+    <img *ngFor="let card of deck.cards"
+      class="builder-deck-pane-card"
+      [src]="card.imageUrl"
+      (dblclick)="removeCard(card)"
+      (mouseenter)="updateSelected(card)" />
+  </div>
+  <div
+    class="builder-deck-pane-side"
+    (dragover)="$event.preventDefault()"
+    (drop)="drop($event, true)">
+    <img *ngFor="let card of deck.sideboard"
+      class="builder-deck-pane-card"
+      [src]="card.imageUrl"
+      (click)="removeSideCard(card)"
+      (mouseenter)="updateSelected(card)" />
+  </div>
+</div>
+
+<div
+  class="builder-search-pane form-control">
+  <div
+    class="builder-search-pane-menu"
+    (keydown)="formKeyDown($event)">
+    <div
+      class="sky-form-group">
+      <label
+        class="sky-control-label"
+        for="search-name">
+        Name:
+      </label>
+      <input
+        class="builder-search-pane-menu-title sky-form-control"
+        id="search-name"
+        type="text"
+        [(ngModel)]="searchName"
+      />
+    </div>
+    <div
+      class="sky-form-group">
+      <label
+        class="sky-control-label"
+        for="search-description">
+        Description:
+      </label>
+      <input
+        class="builder-search-pane-menu-description sky-form-control"
+        id="search-description"
+        type="text"
+        [(ngModel)]="searchDescription"
+      />
+    </div>
+    <div
+      class="sky-form-group">
+      <label
+        class="sky-control-label"
+        for="search-description">
+        Type:
+      </label>
+      <input
+        class="builder-search-pane-menu-type sky-form-control"
+        id="search-description"
+        type="text"
+        [(ngModel)]="searchType"
+      />
+    </div>
+    <button
+      class="sky-btn sky-btn-primary sky-form-control"
+      type="button"
+      (click)="search()">
+      Search
+    </button>
+    <hr/>
+  </div>
+  <sky-paging
+    pageSize="20"
+    [itemCount]="searchResults.length"
+    [(currentPage)]="currentPage">
+  </sky-paging>
+  <div
+    class="builder-search-pane-preview">
+    <img *ngFor="let result of searchResultPage"
+      class="builder-search-pane-result"
+      draggable="true"
+      [src]="result.imageUrl"
+      (dblclick)="addCard(result)"
+      (dragstart)="drag($event, result)"
+      (mouseenter)="updateSelected(result)"
+    />
+  </div>
+</div>

@@ -58,7 +58,12 @@ target/
 
 # Secrets
 app/secret/
-config.py
+server/app/config.py
+server/flask
+server/node_modules
 
 sky-version/node_modules
 sky-version/package-lock.json
+
+client/node_modules
+client/package-lock.json

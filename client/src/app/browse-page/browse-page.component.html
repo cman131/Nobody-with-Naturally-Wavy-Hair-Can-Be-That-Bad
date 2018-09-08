@@ -1,0 +1,61 @@
+<app-nav role="navigation"></app-nav>
+<div
+  class='main-content'>
+  <sky-list
+    [data]="results"
+    [defaultView]="grid">
+    <sky-list-toolbar>
+      <sky-list-column-selector-action
+        [gridView]="grid">
+      </sky-list-column-selector-action>
+    </sky-list-toolbar>
+
+    <sky-list-view-grid
+      fit="scroll"
+      #grid>
+      <sky-grid-column
+        description="The primary identifier of the deck"
+        field="id"
+        heading="ID">
+      </sky-grid-column>
+      <sky-grid-column
+        description="What the deck is called"
+        field="name"
+        heading="Name">
+      </sky-grid-column>
+      <sky-grid-column
+        description="Who created the deck"
+        field="author"
+        heading="Author">
+      </sky-grid-column>
+      <sky-grid-column
+        description="How many cards are in the deck"
+        field="cardCount"
+        heading="Deck size">
+      </sky-grid-column>
+      <sky-grid-column
+        description="How many cards are in the deck's sideboard"
+        field="sideCount"
+        heading="Sideboard size">
+      </sky-grid-column>
+      <sky-grid-column
+        field="control"
+        [isSortable]="false"
+        [locked]="true"
+        [template]="navCellTemplate">
+      </sky-grid-column>
+    </sky-list-view-grid>
+  </sky-list>
+</div>
+
+<ng-template
+  #navCellTemplate
+  let-row="row">
+  <a
+    class="sky-btn sky-btn-link"
+    [queryParams]="{id: row.id}"
+    [routerLink]="'/build-page'"
+  >
+    View/Edit
+  </a>
+</ng-template>
