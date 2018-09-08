@@ -1,68 +1,32 @@
 # MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld
-<h3><b style='color: red;'>STALLED</b></h3><p> - until I get time off from or am finished with Senior Project</p>
-A Python Flask web application to rate Parks in your area that may end up as a prototype to build a base rating application that can be used to build an application for rating anything from parks to perspective.
+A Python Flask web application to create CCG decks. The first iteration will only include magic cards, but will hopefully be expanded to include other games such as Weiss|Schwartz and Android: Netrunner.
 
-<h1>Project Mission</h1>
-<ul>
-<li>I intend to use this project for getting familiar with the flask framework and the construction of Flask applications.
- <ul></li>This project will likely begin in a very messy setup without testing while I am exploring the structure and tools that flask provides.
- </li></ul>
-</li>
-<li>I will also be integrating my ShellCommand for Python libraries in order to perform unix level tasks that... I have not come up with yet :D</li>
-<li>Another goal I intend to take on is making a welcoming project for open source contributors.
- <ul><li>This will not be the project I start out trying to build a community for, but I will attempt to have the documentation and README be as welcoming as I can make it.</li>
- <li>I'll start out by making setup instructions for Windows and then follow up with Linux(probably Ubuntu). I'll have some friends run through the setup and give me some feedback about the process, instructions, and README organization.
- </li>
- <li>I will attempt to create a setup for OSX as well, but I need to get my hands on a mac first :) [Probably going to borrow Brian's]
- </li></ul>
-</li>
-</ul>
-
-<h1>How to set up and run</h1>
-<h3>Windows</h3>
- 1. You need to first install <a href='https://www.python.org/downloads/'>python 3.4.x</a> (x means I don't care which :D )
- 2. You will also need to <a href='https://docs.python.org/3/using/windows.html'>set up your PATH</a>
- 3. Now we need to install a few things so open cmd or gitBash as admin and run these commands:
+##How to set up and run
+###Linux
+ 1. Now we need to install a few things so open terminal and run these commands:
 
  ```
-python -m pip install flask
-python -m pip install flask-login
-python -m pip install flask-openid
-python -m pip install flask-mail
-python -m pip install flask-sqlalchemy
-python -m pip install sqlalchemy-migrate
-python -m pip install flask-whooshalchemy
-python -m pip install flask-wtf
-python -m pip install flask-babel
-python -m pip install guess_language
-python -m pip install flipflop
-python -m pip install coverage
+sudo bash linux-install.sh
  ```
- 4. You also need to install and <a href='http://dev.mysql.com/downloads/windows/installer/'>set up mysql</a>
- 5. Now you need to go <a href='https://developers.google.com/maps/documentation/geocoding/intro'>get yourself keys</a> for google's geocoding api and map component api
-   5.1. Get a Server Key and a Browser Key (You should also specify referrers)
- 6. Navigate to where you have cloned this project
-   6.1. If you have not yet, follow the recommended git setup section or just do it how you want.
- 7. Now make a copy of the config_example.py file named 'config.py'
- 8. Now fill the user, password, and api_key variables with what you have from setting up mysql
+ 2. You also need to install and <a href='http://dev.mysql.com/downloads/windows/installer/'>set up mysql</a>
+ 3. Navigate to where you have cloned this project
+   3.1. If you have not yet, follow the recommended git setup section or just do it how you want.
+ 4. Now make a copy of the config_example.py file named 'config.py'
+ 5. Now fill the user, password, and api_key variables with what you have from setting up mysql
  ```
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-GOOGLE_SERVER_API_KEY = "dis here's a server key"
-GOOGLE_BROWSER_API_KEY = "dis is a browser key"
-GEOCODE_API_BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
-
 MYSQL_DATABASE_USER = "iamtotallyavalidusername"
 MYSQL_DATABASE_PASSWORD = "lookatmeimapassword"
-MYSQL_DATABASE_DB = "ParkRater"
+MYSQL_DATABASE_DB = "DeckBuilder"
 MYSQL_DATABASE_HOST = "localhost"
  ```
  <h5 style='color: red'>WARNING: Do NOT ever commit your config information</h5>
  <p>this would make them public knowledge</p>
 
- 9. Now run the dbSetup.py with ```python dbSetup.py```
- 10. If all went well you should now be able to run ```python run.py``` to start the server on <a href='http://localhost:5000'>localhost:5000</a>
+ 6. Now run the dbSetup.py with ```python dbSetup.py```
+ 7. If all went well you should now be able to run ```python run.py``` to start the server on <a href='http://localhost:5000'>localhost:5000</a>
 
 
 <h1>Recommended Git Setup</h1>
@@ -70,6 +34,6 @@ MYSQL_DATABASE_HOST = "localhost"
 2. Make sure you have <a href='https://git-scm.com/book/en/v2/Getting-Started-Installing-Git'>git installed</a>.
 3. Now go ahead and open a terminal or git bash if on windows.
 4. Navigate to the directory you want this project to be in.
-5. Now execute ```git clone https://github.com/{GitUsername}/MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld.git```
+5. Now execute ```git clone https://github.com/{GitUsername}/DeckBuilderPro.git```
   5.1 replace {GitUsername} with your git username
-6. The remaining command is to set the remote ```git add remote upstream https://github.com/cman131/MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld.git```
+6. The remaining command is to set the remote ```git add remote upstream https://github.com/cman131/DeckBuilderPro.git```

@@ -1,8 +1,0 @@
-{% extends 'layout.html' %}
-{% block content %}
-        <ul id='result-list'>
-            {% for result in results %}
-            <li class="result"><a href='./park?id={{result.id}}'>{{result.name}}</a></li>
-            {% endfor %}
-        </ul>
-{% endblock %}

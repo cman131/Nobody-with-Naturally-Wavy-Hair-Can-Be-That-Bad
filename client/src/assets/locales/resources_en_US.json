@@ -1,0 +1,14 @@
+{
+  "app_nav_build": {
+    "message": "Deck builder",
+    "_description": "The text for the Deck builder top-level navigation item"
+  },
+  "app_nav_browse": {
+    "message": "Browse Decks",
+    "_description": "The text for the Deck browser top-level navigation item"
+  },
+  "app_nav_home": {
+    "message": "Home",
+    "_description": "The text for the Home top-level navigation item"
+  }
+}
