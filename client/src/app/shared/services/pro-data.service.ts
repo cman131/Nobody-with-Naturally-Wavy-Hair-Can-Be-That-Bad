@@ -4,6 +4,9 @@ import {
 import {
   Http
 } from '@angular/http';
+import {
+  PlatformLocation
+} from '@angular/common';
 
 import {
   Observable
@@ -18,7 +21,13 @@ import {
 export class ProDataService {
   private baseUrl = 'http://127.0.0.1:5000';
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http,
+    private platformLocation: PlatformLocation
+  ) {
+    this.baseUrl = (this.platformLocation as any).location.origin.replace(/:([0-9]+)/, '') + ':5000';
+    this.baseUrl = this.baseUrl.replace(/https/, 'http');
+  }
 
   public getDeck(id: string): Observable<Deck> {
     return this.http.get(
