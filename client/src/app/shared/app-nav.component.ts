@@ -12,12 +12,12 @@ export class AppNavComponent {
       path: '/'
     },
     {
-      titleKey: 'app_nav_build',
-      path: '/build-page'
-    },
-    {
       titleKey: 'app_nav_browse',
       path: '/browse-page'
+    },
+    {
+      titleKey: 'app_nav_build',
+      path: '/build-page'
     }
   ];
 }
