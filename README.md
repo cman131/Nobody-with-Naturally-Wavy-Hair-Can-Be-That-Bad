@@ -1,4 +1,4 @@
-# MakeFriendsYouCanCallByNicknamesEvenWhenYouAreOld
+# Nobody-with-Naturally-Wavy-Hair-Can-Be-That-Bad
 A Python Flask web application to create CCG decks. The first iteration will only include magic cards, but will hopefully be expanded to include other games such as Weiss|Schwartz and Android: Netrunner.
 
 ##How to set up and run
